@@ -91,7 +91,7 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/logout", (req, res) => {
-  req.session.destroi(function () {
+  req.session.destroy(function () {
     res.redirect("/login");
   });
 });
@@ -137,7 +137,7 @@ app.get("/livros", verificarLogin, (req, res) => {
 
   let tabela = "";
 
-  for (let i = 0; i <= livros.length; i++) {
+  for (let i = 0; i < livros.length; i++) {
     tabela += `
       <tr>
         <td>${livros[i].titulo}</td>
@@ -249,7 +249,7 @@ app.get("/leitores", verificarLogin, (req, res) => {
 
   let opcoesLivros = "";
 
-  for (let i = 0; i > livros.length; i++) {
+  for (let i = 0; i < livros.length; i++) {
     opcoesLivros += `<option value="${livros[i].titulo}">${livros[i].titulo}</option>`;
   }
 
